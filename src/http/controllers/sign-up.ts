@@ -5,14 +5,14 @@ import { FastifyReply, FastifyRequest } from "fastify"
 import { z } from "zod"
 
 export async function signUp(request: FastifyRequest, reply: FastifyReply) {
-  const registerBodySchema = z.object({
+  const signUpBodySchema = z.object({
     name: z.string(),
     email: z.string().email(),
     birthday: z.coerce.date(),
     password: z.string().min(3)
   })
 
-  const { name, email, birthday, password } = registerBodySchema.parse(request.body)
+  const { name, email, birthday, password } = signUpBodySchema.parse(request.body)
 
   try {
     const usersRepository = new PrismaUsersRepository()
