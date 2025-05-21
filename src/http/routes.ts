@@ -3,6 +3,7 @@ import { signUp } from "./controllers/sign-up";
 import { signIn } from "./controllers/sign-in";
 import { verifyJWT } from "./middlewares/verify-jwt";
 import { createItem } from "./controllers/create-item";
+import { fetchUserItems } from "./controllers/fetch-user-items";
 
 export async function appRoutes(app: FastifyInstance) {
   // public
@@ -10,5 +11,6 @@ export async function appRoutes(app: FastifyInstance) {
   app.post('/signin', signIn)
 
   // private
-  app.post('/item', { onRequest: [verifyJWT] }, createItem)
+  app.post('/items', { onRequest: [verifyJWT] }, createItem)
+  app.get('/items', { onRequest: [verifyJWT] }, fetchUserItems)
 }

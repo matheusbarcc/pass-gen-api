@@ -1,7 +1,6 @@
 import { PrismaItemsRepository } from "@/repositories/prisma/prisma-items-repository"
 import { CreateItemService } from "@/services/create-item"
 import { ItemLabelAlreadyExistsError } from "@/services/errors/item-label-already-exists"
-import { UserAlreadyExistsError } from "@/services/errors/user-already-exists-error"
 import { FastifyReply, FastifyRequest } from "fastify"
 import { z } from "zod"
 

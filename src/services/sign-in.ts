@@ -7,8 +7,6 @@ interface SignInServiceRequest {
   password: string
 }
 
-type SignInServiceResponse = void
-
 export class SignInService {
   constructor(private usersRepository: UsersRepository) { }
 

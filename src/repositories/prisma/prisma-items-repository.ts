@@ -13,8 +13,14 @@ export class PrismaItemsRepository implements ItemsRepository {
     return item
   }
 
-  async findMany(): Promise<Item[]> {
-    throw new Error("Method not implemented.");
+  async findManyByUserId(userId: string) {
+    const items = await prisma.item.findMany({
+      where: {
+        user_id: userId
+      }
+    })
+
+    return items
   }
 
   async create(data: Prisma.ItemUncheckedCreateInput) {
@@ -25,7 +31,7 @@ export class PrismaItemsRepository implements ItemsRepository {
     return item
   }
 
-  async delete(id: string): Promise<void> {
+  async delete(id: string) {
     throw new Error("Method not implemented.");
   }
 }
