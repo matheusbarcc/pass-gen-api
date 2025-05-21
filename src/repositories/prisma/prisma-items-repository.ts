@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { Item, Prisma } from "prisma/generated/prisma";
+import { Prisma } from "prisma/generated/prisma";
 import { ItemsRepository } from "../items-repository";
 
 export class PrismaItemsRepository implements ItemsRepository {
@@ -7,6 +7,16 @@ export class PrismaItemsRepository implements ItemsRepository {
     const item = await prisma.item.findFirst({
       where: {
         label,
+      }
+    })
+
+    return item
+  }
+
+  async findById(id: string) {
+    const item = await prisma.item.findUnique({
+      where: {
+        id,
       }
     })
 
@@ -31,7 +41,11 @@ export class PrismaItemsRepository implements ItemsRepository {
     return item
   }
 
-  async delete(id: string) {
-    throw new Error("Method not implemented.");
+  async deleteById(id: string) {
+    await prisma.item.delete({
+      where: {
+        id,
+      }
+    })
   }
 }

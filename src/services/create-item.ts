@@ -1,6 +1,5 @@
 import { ItemsRepository } from "@/repositories/items-repository"
-import { UserAlreadyExistsError } from "./errors/user-already-exists-error"
-import { ItemLabelAlreadyExistsError } from "./errors/item-label-already-exists"
+import { ItemLabelAlreadyExistsError } from "./errors/item-label-already-exists-error"
 
 interface CreateItemServiceRequest {
   userId: string
