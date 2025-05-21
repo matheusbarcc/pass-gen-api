@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "prisma/generated/prisma";
 import { UsersRepository } from "../users-repository";
+import { Prisma } from "generated/prisma";
 
 export class PrismaUsersRepository implements UsersRepository {
   async findByEmail(email: string) {

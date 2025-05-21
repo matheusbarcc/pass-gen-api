@@ -1,5 +1,5 @@
 import { ItemsRepository } from "@/repositories/items-repository"
-import { Item } from "prisma/generated/prisma"
+import { Item } from "generated/prisma"
 
 interface FetchUserItemsServiceRequest {
   userId: string

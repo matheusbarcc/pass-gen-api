@@ -1,4 +1,4 @@
-import { Prisma, Item } from "prisma/generated/prisma";
+import { Prisma, Item } from "generated/prisma";
 
 export interface ItemsRepository {
   findByLabel(label: string): Promise<Item | null>

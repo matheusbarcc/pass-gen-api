@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "prisma/generated/prisma";
 import { ItemsRepository } from "../items-repository";
+import { Prisma } from "generated/prisma";
 
 export class PrismaItemsRepository implements ItemsRepository {
   async findByLabel(label: string) {
