@@ -2085,7 +2085,7 @@ export namespace Prisma {
 
   export type ItemMinAggregateOutputType = {
     id: string | null
-    name: string | null
+    label: string | null
     password: string | null
     created_at: Date | null
     user_id: string | null
@@ -2093,7 +2093,7 @@ export namespace Prisma {
 
   export type ItemMaxAggregateOutputType = {
     id: string | null
-    name: string | null
+    label: string | null
     password: string | null
     created_at: Date | null
     user_id: string | null
@@ -2101,7 +2101,7 @@ export namespace Prisma {
 
   export type ItemCountAggregateOutputType = {
     id: number
-    name: number
+    label: number
     password: number
     created_at: number
     user_id: number
@@ -2111,7 +2111,7 @@ export namespace Prisma {
 
   export type ItemMinAggregateInputType = {
     id?: true
-    name?: true
+    label?: true
     password?: true
     created_at?: true
     user_id?: true
@@ -2119,7 +2119,7 @@ export namespace Prisma {
 
   export type ItemMaxAggregateInputType = {
     id?: true
-    name?: true
+    label?: true
     password?: true
     created_at?: true
     user_id?: true
@@ -2127,7 +2127,7 @@ export namespace Prisma {
 
   export type ItemCountAggregateInputType = {
     id?: true
-    name?: true
+    label?: true
     password?: true
     created_at?: true
     user_id?: true
@@ -2208,7 +2208,7 @@ export namespace Prisma {
 
   export type ItemGroupByOutputType = {
     id: string
-    name: string
+    label: string
     password: string
     created_at: Date
     user_id: string
@@ -2233,7 +2233,7 @@ export namespace Prisma {
 
   export type ItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    label?: boolean
     password?: boolean
     created_at?: boolean
     user_id?: boolean
@@ -2242,7 +2242,7 @@ export namespace Prisma {
 
   export type ItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    label?: boolean
     password?: boolean
     created_at?: boolean
     user_id?: boolean
@@ -2251,7 +2251,7 @@ export namespace Prisma {
 
   export type ItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    label?: boolean
     password?: boolean
     created_at?: boolean
     user_id?: boolean
@@ -2260,13 +2260,13 @@ export namespace Prisma {
 
   export type ItemSelectScalar = {
     id?: boolean
-    name?: boolean
+    label?: boolean
     password?: boolean
     created_at?: boolean
     user_id?: boolean
   }
 
-  export type ItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "password" | "created_at" | "user_id", ExtArgs["result"]["item"]>
+  export type ItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "label" | "password" | "created_at" | "user_id", ExtArgs["result"]["item"]>
   export type ItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
@@ -2284,7 +2284,7 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string
+      label: string
       password: string
       created_at: Date
       user_id: string
@@ -2713,7 +2713,7 @@ export namespace Prisma {
    */
   interface ItemFieldRefs {
     readonly id: FieldRef<"Item", 'String'>
-    readonly name: FieldRef<"Item", 'String'>
+    readonly label: FieldRef<"Item", 'String'>
     readonly password: FieldRef<"Item", 'String'>
     readonly created_at: FieldRef<"Item", 'DateTime'>
     readonly user_id: FieldRef<"Item", 'String'>
@@ -3159,7 +3159,7 @@ export namespace Prisma {
 
   export const ItemScalarFieldEnum: {
     id: 'id',
-    name: 'name',
+    label: 'label',
     password: 'password',
     created_at: 'created_at',
     user_id: 'user_id'
@@ -3299,7 +3299,7 @@ export namespace Prisma {
     OR?: ItemWhereInput[]
     NOT?: ItemWhereInput | ItemWhereInput[]
     id?: StringFilter<"Item"> | string
-    name?: StringFilter<"Item"> | string
+    label?: StringFilter<"Item"> | string
     password?: StringFilter<"Item"> | string
     created_at?: DateTimeFilter<"Item"> | Date | string
     user_id?: StringFilter<"Item"> | string
@@ -3308,7 +3308,7 @@ export namespace Prisma {
 
   export type ItemOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
+    label?: SortOrder
     password?: SortOrder
     created_at?: SortOrder
     user_id?: SortOrder
@@ -3320,7 +3320,7 @@ export namespace Prisma {
     AND?: ItemWhereInput | ItemWhereInput[]
     OR?: ItemWhereInput[]
     NOT?: ItemWhereInput | ItemWhereInput[]
-    name?: StringFilter<"Item"> | string
+    label?: StringFilter<"Item"> | string
     password?: StringFilter<"Item"> | string
     created_at?: DateTimeFilter<"Item"> | Date | string
     user_id?: StringFilter<"Item"> | string
@@ -3329,7 +3329,7 @@ export namespace Prisma {
 
   export type ItemOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
+    label?: SortOrder
     password?: SortOrder
     created_at?: SortOrder
     user_id?: SortOrder
@@ -3343,7 +3343,7 @@ export namespace Prisma {
     OR?: ItemScalarWhereWithAggregatesInput[]
     NOT?: ItemScalarWhereWithAggregatesInput | ItemScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Item"> | string
-    name?: StringWithAggregatesFilter<"Item"> | string
+    label?: StringWithAggregatesFilter<"Item"> | string
     password?: StringWithAggregatesFilter<"Item"> | string
     created_at?: DateTimeWithAggregatesFilter<"Item"> | Date | string
     user_id?: StringWithAggregatesFilter<"Item"> | string
@@ -3418,7 +3418,7 @@ export namespace Prisma {
 
   export type ItemCreateInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
     user: UserCreateNestedOneWithoutItemsInput
@@ -3426,7 +3426,7 @@ export namespace Prisma {
 
   export type ItemUncheckedCreateInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
     user_id: string
@@ -3434,7 +3434,7 @@ export namespace Prisma {
 
   export type ItemUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutItemsNestedInput
@@ -3442,7 +3442,7 @@ export namespace Prisma {
 
   export type ItemUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
@@ -3450,7 +3450,7 @@ export namespace Prisma {
 
   export type ItemCreateManyInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
     user_id: string
@@ -3458,14 +3458,14 @@ export namespace Prisma {
 
   export type ItemUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ItemUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
@@ -3573,7 +3573,7 @@ export namespace Prisma {
 
   export type ItemCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    label?: SortOrder
     password?: SortOrder
     created_at?: SortOrder
     user_id?: SortOrder
@@ -3581,7 +3581,7 @@ export namespace Prisma {
 
   export type ItemMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    label?: SortOrder
     password?: SortOrder
     created_at?: SortOrder
     user_id?: SortOrder
@@ -3589,7 +3589,7 @@ export namespace Prisma {
 
   export type ItemMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    label?: SortOrder
     password?: SortOrder
     created_at?: SortOrder
     user_id?: SortOrder
@@ -3728,14 +3728,14 @@ export namespace Prisma {
 
   export type ItemCreateWithoutUserInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
   }
 
   export type ItemUncheckedCreateWithoutUserInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
   }
@@ -3771,7 +3771,7 @@ export namespace Prisma {
     OR?: ItemScalarWhereInput[]
     NOT?: ItemScalarWhereInput | ItemScalarWhereInput[]
     id?: StringFilter<"Item"> | string
-    name?: StringFilter<"Item"> | string
+    label?: StringFilter<"Item"> | string
     password?: StringFilter<"Item"> | string
     created_at?: DateTimeFilter<"Item"> | Date | string
     user_id?: StringFilter<"Item"> | string
@@ -3831,28 +3831,28 @@ export namespace Prisma {
 
   export type ItemCreateManyUserInput = {
     id?: string
-    name: string
+    label: string
     password: string
     created_at?: Date | string
   }
 
   export type ItemUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ItemUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ItemUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
