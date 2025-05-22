@@ -3,10 +3,11 @@ import { ItemsRepository } from "../items-repository";
 import { Prisma } from "generated/prisma";
 
 export class PrismaItemsRepository implements ItemsRepository {
-  async findByLabel(label: string) {
+  async findByLabelAndUserId(label: string, userId: string) {
     const item = await prisma.item.findFirst({
       where: {
         label,
+        user_id: userId
       }
     })
 

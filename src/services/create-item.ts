@@ -11,7 +11,7 @@ export class CreateItemService {
   constructor(private itemRepository: ItemsRepository) { }
 
   async execute({ userId, label, password }: CreateItemServiceRequest) {
-    const itemWithSameLabel = await this.itemRepository.findByLabel(label)
+    const itemWithSameLabel = await this.itemRepository.findByLabelAndUserId(label, userId)
 
     if (itemWithSameLabel) {
       throw new ItemLabelAlreadyExistsError()
