@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { UsersRepository } from "../users-repository";
+import { UpdateUserParams, UsersRepository } from "../users-repository";
 import { Prisma } from "generated/prisma";
 
 export class PrismaUsersRepository implements UsersRepository {
@@ -17,6 +17,21 @@ export class PrismaUsersRepository implements UsersRepository {
     const user = await prisma.user.findUnique({
       where: {
         id,
+      }
+    })
+
+    return user
+  }
+
+  async update(data: UpdateUserParams) {
+    const user = await prisma.user.update({
+      where: {
+        id: data.userId
+      },
+      data: {
+        name: data.name,
+        email: data.email,
+        birthday: data.birthday
       }
     })
 

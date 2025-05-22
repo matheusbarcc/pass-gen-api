@@ -6,6 +6,7 @@ import { createItem } from "./controllers/create-item";
 import { fetchUserItems } from "./controllers/fetch-user-items";
 import { deleteItem } from "./controllers/delete-item";
 import { getUserDetails } from "./controllers/get-user-details";
+import { updateUser } from "./controllers/update-user";
 
 export async function appRoutes(app: FastifyInstance) {
   // public
@@ -14,6 +15,8 @@ export async function appRoutes(app: FastifyInstance) {
 
   // private
   app.get('/me', { onRequest: [verifyJWT] }, getUserDetails)
+  app.put('/me', { onRequest: [verifyJWT] }, updateUser)
+
   app.get('/items', { onRequest: [verifyJWT] }, fetchUserItems)
   app.post('/items', { onRequest: [verifyJWT] }, createItem)
   app.delete('/items/:itemId', { onRequest: [verifyJWT] }, deleteItem)
