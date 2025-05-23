@@ -28,6 +28,9 @@ export class PrismaItemsRepository implements ItemsRepository {
     const items = await prisma.item.findMany({
       where: {
         user_id: userId
+      },
+      orderBy: {
+        created_at: 'desc'
       }
     })
 
