@@ -1,6 +1,7 @@
 import { UsersRepository } from "@/repositories/users-repository"
 import { compare } from "bcryptjs"
 import { InvalidCredentialsError } from "./errors/invalid-crendentials-error"
+import { UserNotRegistredError } from "./errors/user-not-registred-error"
 
 interface SignInServiceRequest {
   email: string
@@ -14,7 +15,7 @@ export class SignInService {
     const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
-      throw new InvalidCredentialsError()
+      throw new UserNotRegistredError()
     }
 
     const doesPasswordMatches = await compare(password, user.password_hash)
